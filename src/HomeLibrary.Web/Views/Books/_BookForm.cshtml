@@ -1,0 +1,42 @@
+﻿@model BookViewModel
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="mb-3">
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Author" class="form-label"></label>
+    <input asp-for="Author" class="form-control" />
+    <span asp-validation-for="Author" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="PublishYear" class="form-label"></label>
+    <input asp-for="PublishYear" class="form-control" />
+    <span asp-validation-for="PublishYear" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+    <label asp-for="TocHtml" class="form-label"></label>
+    <textarea asp-for="TocHtml" class="form-control" rows="10"></textarea>
+    <span asp-validation-for="TocHtml" class="text-danger"></span>
+    <div class="form-text">
+        Каждая глава это пункт списка, вложенность задаётся отступом (кнопка или Tab).
+        Страницу указывайте после многоточия: «Название ..... 17».
+    </div>
+    <div class="mt-2">
+        <label for="tocImport" class="form-label small mb-0">
+            Загрузить из XML-файла (заменит содержимое редактора)
+        </label>
+        <input type="file" id="tocImport" accept=".xml" class="form-control form-control-sm" />
+    </div>
+</div>

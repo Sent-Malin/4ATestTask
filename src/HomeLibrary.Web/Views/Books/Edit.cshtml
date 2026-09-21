@@ -1,0 +1,17 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "Редактирование";
+}
+
+<h1 class="h3">Редактирование книги</h1>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <partial name="_BookForm" model="Model" />
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-link">Отмена</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <partial name="_TocEditorScripts" />
+}

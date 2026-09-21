@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="HomeLibrary.Core/HomeLibrary.Core.csproj" />
+  <Project Path="HomeLibrary.Data/HomeLibrary.Data.csproj" />
+  <Project Path="HomeLibrary.Web/HomeLibrary.Web.csproj" />
+</Solution>

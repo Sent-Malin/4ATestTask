@@ -1,0 +1,35 @@
+﻿<script src="~/lib/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '#TocHtml',
+        license_key: 'gpl',
+        height: 350,
+        menubar: false,
+        statusbar: false,
+        branding: false,
+        promotion: false,
+        plugins: 'lists',
+        toolbar: 'undo redo | bullist numlist | outdent indent',
+        valid_elements: 'ul,ol,li,p,br'
+    });
+
+    document.getElementById('tocImport').addEventListener('change', async function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        const data = new FormData();
+        data.append('file', file);
+        data.append('__RequestVerificationToken',
+            document.querySelector('input[name="__RequestVerificationToken"]').value);
+
+        const response = await fetch('@Url.Action("ImportToc", "Books")', { method: 'POST', body: data });
+
+        if (response.ok) {
+            tinymce.get('TocHtml').setContent((await response.json()).html);
+        } else {
+            alert(await response.text());
+        }
+
+        this.value = '';
+    });
+</script>

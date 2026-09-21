@@ -1,0 +1,46 @@
+{
+  "version": "3.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "tinymce@7.9.3",
+      "destination": "wwwroot/lib/tinymce/",
+      "files": [
+        "icons/default/icons.js",
+        "icons/default/icons.min.js",
+        "icons/default/index.js",
+        "icons/default/index.min.js",
+        "tinymce.min.js",
+        "license.md",
+        "models/dom/index.js",
+        "models/dom/index.min.js",
+        "models/dom/model.js",
+        "models/dom/model.min.js",
+        "themes/silver/theme.min.js",
+        "themes/silver/theme.js",
+        "themes/silver/index.min.js",
+        "themes/silver/index.js",
+        "skins/content/default/content.min.js",
+        "skins/content/default/content.min.css",
+        "skins/content/default/content.js",
+        "skins/content/default/content.css",
+        "skins/ui/oxide/skin.shadowdom.min.js",
+        "skins/ui/oxide/skin.shadowdom.min.css",
+        "skins/ui/oxide/skin.shadowdom.js",
+        "skins/ui/oxide/skin.shadowdom.css",
+        "skins/ui/oxide/skin.min.js",
+        "skins/ui/oxide/skin.min.css",
+        "skins/ui/oxide/skin.js",
+        "skins/ui/oxide/skin.css",
+        "skins/ui/oxide/content.min.js",
+        "skins/ui/oxide/content.min.css",
+        "skins/ui/oxide/content.js",
+        "skins/ui/oxide/content.inline.min.js",
+        "skins/ui/oxide/content.inline.min.css",
+        "skins/ui/oxide/content.inline.js",
+        "skins/ui/oxide/content.inline.css",
+        "skins/ui/oxide/content.css"
+      ]
+    }
+  ]
+}

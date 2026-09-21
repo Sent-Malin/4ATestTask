@@ -1,0 +1,35 @@
+﻿@model Book
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h1 class="h3">@Model.Title</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Автор</dt>
+    <dd class="col-sm-9">@Model.Author</dd>
+
+    <dt class="col-sm-3">Год издания</dt>
+    <dd class="col-sm-9">@Model.PublishYear</dd>
+
+    <dt class="col-sm-3">Описание</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+
+    <dt class="col-sm-3">Оглавление</dt>
+    <dd class="col-sm-9">
+        @if (ViewData["TocHtml"] is string toc && toc.Length > 0)
+        {
+            @Html.Raw(toc)
+            //Html.Raw здесь безопасен. HTML собран конвертером, а весь пользовательский текст в нём прошёл HtmlEncode.
+            <a asp-action="ExportToc" asp-route-id="@Model.Id"
+               class="btn btn-sm btn-outline-secondary">Скачать XML</a>
+        }
+        else
+        {
+            <span class="text-muted">Не указано</span>
+        }
+    </dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Изменить</a>
+<a asp-action="Index" class="btn btn-link">К списку</a>
